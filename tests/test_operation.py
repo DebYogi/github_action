@@ -1,11 +1,24 @@
-from src.math_operations import add,sub
+"""
+Unit tests for math operations in src.math_operations.
+"""
 
-def test_add():
-    assert add(2,3)==5
-    assert add(-1,1)==0
-    
-def test_sub():
-    assert sub(5,3)==2
-    assert sub(4,3)==1
-    assert sub(3,3)==0
-    assert sub(2,3)==-1
+import unittest
+from src.math_operations import add, subtract
+
+
+class TestMathOperations(unittest.TestCase):
+    """Test cases for math operations."""
+
+    def test_add(self):
+        """Test addition of two numbers."""
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-1, 1), 0)
+
+    def test_subtract(self):
+        """Test subtraction of two numbers."""
+        self.assertEqual(subtract(5, 3), 2)
+        self.assertEqual(subtract(0, 4), -4)
+
+
+if __name__ == "__main__":
+    unittest.main()
